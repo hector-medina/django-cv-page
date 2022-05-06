@@ -1,8 +1,8 @@
 FROM python:latest
 ENV PYTHONUNBUFFERED 1
-RUN mkdir /app
-WORKDIR /app
+RUN mkdir /siteapp
+WORKDIR /siteapp
 COPY requirements.txt /app/
 RUN pip install --user -r requirements.txt
-COPY . /app/
+COPY . /siteapp/
 CMD python manage.py runserver
